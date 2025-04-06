@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Taxi Website</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Taxi Website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    </head>
+    <body>
+        <header>
+            <nav class="transparent">
+               <div class="header-text">
+                    <a href="#acasa">Acasă</a>
+                    <a href="#beneficii">Beneficii</a>
+                    <a href="#tarife">Tarife</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
+        
+        <section id="acasa">
+            <div class="acasa-text">
+                <h1>Călătoreste rapid<br> și în siguranță <br>cu <span>TaxiGo!</span></h1>
+                <p>Rezervă o cursă doar în câteva secunde, fără stres!</p>
+                <div class="acasa-buton-descarcare">
+                    <a href="https://play.google.com/store/apps/details?id=com.ubercab&hl=ro&pli=1" target="_blank">
+                        <button>Descarcă Aplicația</button>
+                    </a>
+                </div>
+            </div>
+            <div class="acasa-imagine">
+                <picture>
+                    <img src="images/taxi.png" alt="taxi">
+                </picture>
+            </div>
+        </section>
+        
+        <section id="beneficii">
+            <div class="beneficii-text">
+                <h2>BENEFICII</h2>
+            </div>
+            <div class="chenare-beneficii">
+                <div class="chenar-beneficiu">
+                    <img src="images/beneficii.png" alt="beneficiu1">
+                    <h3>Comandă rapid</h3>
+                    <p>Fără apeluri, totul se face <br>prin aplicație</p>
+                </div>
+                <div class="chenar-beneficiu">
+                    <img src="images/car.png" alt="beneficiu2">
+                    <h3>Siguranță garantată</h3>
+                    <p>Șoferi verificați, și<br>ratinguri transparente</p>
+                </div>
+                <div class="chenar-beneficiu">
+                    <img src="images/money.png" alt="beneficiu3">
+                    <h3>Tarife accesibile</h3>
+                    <p>Fără surprize, vezi prețul <br>înainte de cursă</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarife">
+            <div class="tarife-text">
+                <h2>TARIFE</h2>
+            </div>
+            <div class="chenare-tarife">
+                <div class="chenar-tarife">
+                    <img src="images/beneficii.png" alt="beneficiu1">
+                    <h3>Tarife corecte</h3>
+                    <p>Plătești exact cât trebuie, fără costuri ascunse sau taxe suplimentare</p>
+                </div>
+                <div class="chenar-tarife">
+                    <img src="images/car.png" alt="beneficiu2">
+                    <h3>Prețuri transparente</h3>
+                    <p>Știi costul cursei dinainte, fără surprize neplăcute</p>
+                </div>
+                <div class="chenar-tarife">
+                    <img src="images/money.png" alt="beneficiu3">
+                    <h3>Economie și confort</h3>
+                    <p>Călătorești la tarife avantajoase, cu servicii de calitate</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <div class="contact-text">
+                <h2>CONTACT</h2>
+            </div>
+
+            <div class="informatii-contact">
+                <div class="col">
+                    <h3>Asistenta</h3>
+                    <h4>
+                        <span>Centru de asistenta</span><br>
+                        <span>Asistenta COVID-19</span><br>
+                        <span>Accesibilitate</span>
+                    </h4>
+                </div>
+                <div class="col">
+                    <h3>Legal</h3>
+                    <h4>
+                        <span>Confidentialitate</span><br>
+                        <span>Termeni si conditii</span><br>
+                        <span>Accesibilitate</span>
+                    </h4>
+                </div>
+                <div class="col"> 
+                    <h3>Parteneri</h3>
+                    <h4>
+                        <span>Parteneri</span><br>
+                        <span>Parteneri de afaceri</span><br>
+                        <span>Parteneri de transport</span>
+                    </h4>
+                </div>
+
+                <div class="formular">
+                    <h3>Abonare Newsletter</h3>
+                    <form>
+                        <input type="email" placeholder="Email" required>
+                        <button>Trimite</button>
+                    </form>
+                </div>
+                <footer>
+                    <p>&copy; <span id="year"></span> TaxiGo. All Rights Reserved.</p>
+                </footer>
+                </footer>
+        </section>
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const header = document.querySelector('nav');
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+
+                const observerOptions = {
+                    threshold: 0.5 // Adjust threshold as needed
+                };
+
+                const observerCallback = (entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                        } else {
+                            entry.target.classList.remove('show');
+                        }
+                    });
+                };
+
+                const acasaObserver = new IntersectionObserver(observerCallback, observerOptions);
+                acasaObserver.observe(document.querySelector('#acasa img'));
+
+                const beneficiiObserver = new IntersectionObserver(observerCallback, observerOptions);
+                document.querySelectorAll('#beneficii .chenar-beneficiu').forEach(chenar => {
+                    beneficiiObserver.observe(chenar);
+                });
+
+                const tarifeObserver = new IntersectionObserver(observerCallback, observerOptions);
+                document.querySelectorAll('#tarife .chenar-tarife').forEach(chenar => {
+                    tarifeObserver.observe(chenar);
+                });
+            });
+
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&family=Poppins:wght@300;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:"Poppins", sans-serif;
+    background-color: #16484F;
+}
+
+html,body{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*---header--- */
+
+nav{
+    background-color: #239FB0;
+    display: flex;
+    justify-content: right;
+    padding: 0 65px;
+    height: 5rem;
+    align-items: center;
+    top:0;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    background-color: rgba(35, 159, 176,0.9);
+    box-shadow: 0 0 11px #16484F;
+}
+
+nav.transparent{
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+}
+
+nav.scrolled{
+    background-color: #239FB0;
+}
+
+nav.scrolled .header-text a:hover{
+    color: #F0FF1D;
+    text-shadow: 0 0 11px #F0FF1D;
+    transition: 0.4s;
+}
+
+nav .header-text a{
+    color: white;
+    font-size:18px;
+    font-weight: 500;
+    margin: 0 1.25rem;
+}
+
+nav .header-text a:hover{
+    color: #2ccee4;
+    text-shadow: 0 0 11px #2ccee4;
+    transition: 0.4s;
+}
+
+/*---acasa---*/
+
+#acasa{
+    color:white;
+    margin-top:110px;
+    margin-left:65px;
+    line-height: 1.2;
+
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    flex-wrap: nowrap;
+    height: calc(100vh - 110px);
+    scroll-padding-top: 2rem;
+    scroll-margin-top: 7rem;
+}
+
+#acasa h1{
+    font-size: 140px;
+    font-weight: 600;
+    color:white;
+    position:relative;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+#acasa span{
+    color: #F0FF1D;
+    font-weight: 700;
+}
+
+#acasa p{
+    font-size:22px;
+    font-weight: 300;
+    line-height: 2.5;
+}
+
+#acasa button{
+    background-color: #239FB0;
+    border: none;
+    color:white;
+    font-weight: 500;
+    font-size:30px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 11px #239FB0;
+}
+
+#acasa button:hover{
+    background-color: #F0FF1D;
+    transition: 1s;
+    box-shadow: 0 0 11px #F0FF1D;
+    color: #16484F;
+}
+
+#acasa img{
+    width: 80%;
+    height: auto;
+    z-index: -1;
+    position: relative;
+    top:-30px;
+
+    opacity: 0;
+    transform: translateX(150px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+#acasa img.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*---beneficii---*/
+
+#beneficii{
+    background-color: #2D6E77;
+    width: 100%;
+    margin: auto;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    scroll-padding-top: 2rem;
+    scroll-margin-top: 5rem;
+    position: relative;
+}
+
+#beneficii h2{
+    font-size: 200px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color:transparent;
+    -webkit-text-stroke: 3px white;
+}
+
+#beneficii .chenare-beneficii{
+    color:white;
+    margin-top: 1%;
+    display:flex;
+    justify-content: space-between;
+    gap:39px;
+    margin-top:-150px;
+}
+
+#beneficii .chenar-beneficiu:hover{
+    background-color: #06282c;
+    transition: 1s;
+    box-shadow: 0 0 11px #06282c;
+
+}
+
+#beneficii .chenare-beneficii h3{
+    font-size:30px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+#beneficii .chenare-beneficii p{
+    margin-top: 11px;
+    font-size:24px;
+}
+
+#beneficii .chenar-beneficiu{
+    background-color: #239FB0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 407px;
+    height:565px;
+    margin-top: 0px;
+    box-shadow: 0 0 11px #239FB0;
+
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#beneficii .chenar-beneficiu.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+#beneficii .chenar-beneficiu img{
+    margin-top: 80px;
+    width: 200px;
+    height: auto;
+}
+
+/*---tarife---*/
+
+#tarife{
+    background-color: #16484F;
+    width: 100%;
+    margin: auto;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    scroll-padding-top: 2rem;
+    scroll-margin-top: 5rem;
+    position: relative;
+}
+
+#tarife h2{
+    font-size: 200px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color:transparent;
+    -webkit-text-stroke: 3px white;
+}
+
+#tarife .chenare-tarife{
+    color:white;
+    margin-top: 1%;
+    display:flex;
+    justify-content: space-between;
+    gap:39px;
+    margin-top:-150px;
+}
+
+#tarife .chenar-tarife:hover{
+    background-color: #06282c;
+    transition: 1s;
+    box-shadow: 0 0 11px #06282c;
+
+}
+
+#tarife .chenare-tarife h3{
+    font-size:30px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+#tarife .chenare-tarife p{
+    margin-top: 11px;
+    font-size:24px;
+}
+
+#tarife .chenar-tarife{
+    background-color: #239FB0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 407px;
+    height:565px;
+    margin-top: 0px;
+    box-shadow: 0 0 11px #239FB0;
+
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#tarife .chenar-tarife.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#tarife .chenar-tarife img{
+    margin-top: 80px;
+    width: 200px;
+    height: auto;
+}
+
+/*---contact---*/
+
+#contact{
+    background-color: #2D6E77;
+    width: 100%;
+    margin: auto;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    scroll-padding-top: 2rem;
+    scroll-margin-top: 5rem;
+    position: relative;
+}
+
+#contact h2{
+    font-size: 180px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color:transparent;
+    -webkit-text-stroke: 3px white;
+}
+
+#contact .informatii-contact{
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    cursor: pointer;
+    gap: 20px;
+}
+
+#contact .informatii-contact .col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+}
+
+#contact h3{
+    font-size:42px;
+    font-weight: 700;
+}
+
+#contact h3:hover {
+    color: #F0FF1D; 
+    text-shadow: 0 0 5px #F0FF1D;
+}
+
+#contact h4{
+    font-size:24px;
+    font-weight: 300;
+    line-height: 2.0;
+    margin-top: 5px;
+}
+
+#contact h4 span{
+    display: inline-block;
+}
+
+#contact h4 span:hover {
+    color: #F0FF1D; 
+    text-shadow: 0 0 6px #F0FF1D; 
+}
+
+#contact .formular {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    margin: 50px auto; 
+    position: absolute;
+    bottom: 80px;
+}
+
+#contact .formular form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contact .formular input,
+#contact .formular button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+#contact .formular button {
+    background-color: #239FB0;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 11px #239FB0;
+}
+
+#contact .formular button:hover {
+    background-color: #F0FF1D;
+    color: #16484F;
+    transition: 0.3s;
+    box-shadow: 0 0 11px #F0FF1D;
+}
+
+#contact .formular h3{
+    font-size: 32px;
+    font-weight: 500;
+}
+
+/*---footer---*/
+
+footer {
+    background-color: #239FB0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-text{
+    color:white;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.footer-text:hover{
+    color: #F0FF1D;
+    text-shadow: 0 0 1px #F0FF1D;
+    transition: 0.4s;
+}
